@@ -1,4 +1,4 @@
-import { ReactDOM } from "react-dom";
+import ReactDOM from 'react-dom';
 
 const App = () => {
     return <h1>Hello There</h1>
