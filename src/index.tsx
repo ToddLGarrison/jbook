@@ -31,16 +31,21 @@ const App = () => {
             plugins: [unpkgPathPlugin()]
         })
 
-        setCode(result.code);
+        setCode(result.outputFiles[0].text)
+        // setCode(result.code);
     };
     
-    return <div>
-        <textarea value={input} onChange={(event) => setInput(event.target.value)}></textarea>
+    return (
         <div>
-            <button onClick={onClick}>Submit</button>
-        </div>
-        <pre>{code}</pre>
-    </div>
+            <textarea 
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+            ></textarea>
+            <div>
+                <button onClick={onClick}>Submit</button>
+            </div>
+            <pre>{code}</pre>
+        </div>)
 };
 
 ReactDOM.render(
