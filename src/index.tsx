@@ -40,7 +40,12 @@ const App = () => {
         })
 
         setCode(result.outputFiles[0].text)
-        // setCode(result.code);
+        
+        try {
+            eval(result.outputFiles[0].text)
+        } catch (error) {
+            alert(error)
+        }
     };
     
     return (
