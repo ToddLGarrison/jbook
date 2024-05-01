@@ -56,6 +56,7 @@ const App = () => {
                         } catch(error) {
                             const root = document.querySelector('#root');
                             root.innerHTML ='<div style="color: red;"><h4>Runtime Error</h4>' + error + '</div>'
+                            console.error(error)
                         }
                     }, false);
                 </script>
