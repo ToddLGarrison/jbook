@@ -15,7 +15,7 @@ interface CodeEditorProps {
 const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
     const editorRef = useRef<any>()
     
-    const onEditorsDidMount: EditorDidMount = (getValue, monacoEditor) => {
+    const onEditorDidMount: EditorDidMount = (getValue, monacoEditor) => {
         editorRef.current = monacoEditor
         monacoEditor.onDidChangeModelContent(() => {
             onChange(getValue());
@@ -52,10 +52,10 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
     }
 
     return (
-        <div className='editor-wrapper'>
+        <div className="editor-wrapper">
             <button className="button button-format is-primary is-small" onClick={onFormatClick}>Format</button>
             <MonacoEditor 
-                editorDidMount={onEditorsDidMount}
+                editorDidMount={onEditorDidMount}
                 value={initialValue}
                 theme="dark"
                 language="javascript"
