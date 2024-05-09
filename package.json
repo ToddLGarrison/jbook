@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
+    "@types/jscodeshift": "0.7.2",
     "@types/node": "^16.18.89",
     "@types/prettier": "^2.7.3",
     "@types/react": "^18.2.65",
@@ -15,8 +16,10 @@
     "axios": "^1.6.8",
     "bulmaswatch": "^0.8.1",
     "esbuild-wasm": "0.8.27",
+    "jscodeshift": "0.11.0",
     "localforage": "^1.10.0",
     "monaco-editor": "0.48.0",
+    "monaco-jsx-highlighter": "0.0.15",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,7 +32,6 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
-
   },
   "eslintConfig": {
     "extends": [
