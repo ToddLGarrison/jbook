@@ -10,8 +10,20 @@ const AddCell: React.FC<AddCellProps> = ({ nextCellId }) => {
     
     return (
         <div className='add-cell'>
-            <button onClick={() => insertCellBefore(nextCellId, 'code')}>Copy</button>
-            <button onClick={() => insertCellBefore(nextCellId, 'text')}>Text</button>
+            <div className='add-buttons'>
+                <button className='button is-rounded is-primary is-small' onClick={() => insertCellBefore(nextCellId, 'code')}>
+                    <span className='icon is-small'>
+                        <i className='fas fa-plus' />
+                    </span>
+                    <span>Copy</span>
+                </button>
+                <button className='button is-rounded is-primary is-small' onClick={() => insertCellBefore(nextCellId, 'code')}>
+                    <span className='icon is-small'>
+                        <i className='fas fa-plus' />
+                    </span>
+                    <span>Text</span>
+                </button>
+            </div>
             <div className='divider'></div>
         </div>
 )};
