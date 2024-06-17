@@ -30,7 +30,9 @@ const reducer = produce((state: BundlesState = initialState, action: Action): Bu
             return state;
         default:
             return state;
-    }
-})
+        }
+    },
+    initialState
+)
 
 export default reducer
