@@ -27,6 +27,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell } ) => {
         return () => {
             clearTimeout(timer);
         }
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cell.id, cell.content, createBundle]);
     
     return (
@@ -38,7 +39,11 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell } ) => {
                         onChange={(value) => updateCell(cell.id, value)}
                     />
                 </Resizable>
-                {bundle && <Preview code={bundle.code} error={bundle.error} />}
+                {
+                    !bundle || bundle.loading 
+                        ? <div>Loading...</div>
+                        : <Preview code={bundle.code} error={bundle.error} />
+                }
             </div>
         </Resizable>
     );
