@@ -16,12 +16,16 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell } ) => {
     const bundle = useTypedSelector((state) => state.bundles[cell.id])
     const cumulativeCode = useTypedSelector((state) => {
         const { data, order } = state.cells;
-        const orderedCells = order.map(id => data[id])
+        const orderedCells = order.map((id) => data[id])
 
         const cumulativeCode = [
             `
                 const show = (value) => {
-                    document.querySelector('#root').innerHTML = value;
+                    if (typeof value === 'object') {
+                        document.querySelector('#root').innerHTML = JSON.stringify(value);
+                    } else {
+                        document.querySelector('#root').innerHTML = value;
+                    }
                 };
             `
         ];
