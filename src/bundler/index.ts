@@ -11,7 +11,6 @@ const bundle = async (rawCode: string) => {
         });
     }
 
-
     try {
         const result = await service.build({
             entryPoints: ['index.js'],
@@ -24,7 +23,9 @@ const bundle = async (rawCode: string) => {
             define: {
                 'process.env.NODE_ENV': '"production"',
                 global: 'window',
-            }
+            },
+            jsxFactory: '_React.createElement',
+            jsxFragment: '_React.Fragment',
         });
         return{ 
             code: result.outputFiles[0].text,
