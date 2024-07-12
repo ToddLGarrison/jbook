@@ -16,7 +16,7 @@ const AddCell: React.FC<AddCellProps> = ({ forceVisible, previousCellId }) => {
                     <span className='icon is-small'>
                         <i className='fas fa-plus' />
                     </span>
-                    <span>Code</span>
+                    <span>Code!</span>
                 </button>
                 <button className='button is-rounded is-primary is-small' onClick={() => insertCellAfter(previousCellId, 'code')}>
                     <span className='icon is-small'>
